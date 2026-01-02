@@ -11,13 +11,22 @@ except FileNotFoundError:
     print("❌ Errore: Manca 'data/dataset_con_quote_FIXED.csv'")
     exit()
 
-# 2. RIMUOVI PARTITE SENZA QUOTE
-# Se manca Odds_1, mancano tutte.
+# 2. GESTIONE PARTITE SENZA QUOTE (MODIFICATO)
+# Non rimuoviamo più le partite senza quote, perché servono per il training!
 initial_count = len(df)
-df_clean = df.dropna(subset=['Odds_1']).copy()
-removed = initial_count - len(df_clean)
 
-print(f"2. Pulizia Quote: Rimosse {removed} righe senza quote.")
+# Invece di cancellare, riempiamo i NaN delle quote con 0.0 o 1.0
+# Questo ci permette di mantenere la riga per il training.
+cols_quotes = ['Odds_1', 'Odds_X', 'Odds_2']
+for col in cols_quotes:
+    if col in df.columns:
+        df[col] = df[col].fillna(1.0) # Mettiamo 1.0 come valore neutro/fittizio
+
+df_clean = df.copy() # Teniamo tutto
+
+print(f"2. Pulizia Quote: MANTENUTE tutte le {len(df_clean)} righe (Quote mancanti settate a 1.0).")
+
+
 print(f"   Righe valide rimaste: {len(df_clean)}")
 
 # 3. TRASFORMAZIONE IN RIGA SINGOLA (MATCH-CENTRIC)
