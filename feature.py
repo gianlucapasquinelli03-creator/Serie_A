@@ -142,4 +142,4 @@ print("-" * 30)
 print(f"✅ FATTO! Dataset creato con {len(final_output)} partite.")
 print(final_output.head())
 
-final_output.to_csv('data/dataset_completo_xgboost.csv', index=False)
+final_output.to_csv('data/dataset_completo_xgboost_3.csv', index=False)

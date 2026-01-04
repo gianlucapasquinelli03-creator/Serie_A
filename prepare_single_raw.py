@@ -2,7 +2,7 @@ import pandas as pd
 
 # 1. Carica il dataset completo (quello con le quote)
 try:
-    df = pd.read_csv('data/dataset_con_quote_FIXED.csv')
+    df = pd.read_csv('data/dataset_con_quote_FIXED_3.csv')
     print(f"Righe totali (Doppie): {len(df)}")
 except FileNotFoundError:
     print("❌ Esegui prima lo script delle quote!")
@@ -72,5 +72,5 @@ print("Esempio Target (0=1, 1=X, 2=2):")
 print(df_final[['date', 'Home_Team', 'Away_Team', 'Target', 'Odds_1']].head())
 
 # Salva
-df_final.to_csv('data/dataset_1x2_ready.csv', index=False)
+df_final.to_csv('data/dataset_1x2_ready_3.csv', index=False)
 print("🚀 SALVATO: 'data/dataset_1x2_ready.csv'")

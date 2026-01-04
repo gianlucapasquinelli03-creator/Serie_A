@@ -9,7 +9,7 @@ print("--- RAFFINAMENTO FINALE DATASET ---")
 # 1. CARICAMENTO DATASET
 try:
     # Carichiamo il dataset che hai appena creato
-    df = pd.read_csv('data/dataset_xgboost_ready.csv')
+    df = pd.read_csv('data/dataset_xgboost_ready_3.csv')
     df['date'] = pd.to_datetime(df['date'])
     
     # Carichiamo anche il calendario per sapere con certezza chi è in casa
@@ -124,5 +124,5 @@ print("-" * 30)
 print(df_ready.head())
 print("-" * 30)
 
-df_ready.to_csv('data/dataset_ultimate.csv', index=False)
+df_ready.to_csv('data/dataset_ultimate_3.csv', index=False)
 print("🚀 File salvato come: data/dataset_ultimate.csv")

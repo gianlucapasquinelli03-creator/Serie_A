@@ -9,7 +9,7 @@ print("--- CREAZIONE FEATURE FINALI (Value Ratio & xG Relative) ---")
 
 # 1. CARICA IL DATASET PRECEDENTE
 try:
-    df = pd.read_csv('data/dataset_completo_xgboost.csv')
+    df = pd.read_csv('data/dataset_completo_xgboost_3.csv')
     df['date'] = pd.to_datetime(df['date'])
     
     # --- FIX: RICALCOLIAMO LA STAGIONE (Season_Year) CHE MANCAVA ---
@@ -113,5 +113,5 @@ print("✅ CALCOLO COMPLETATO")
 print(output_df.tail()) # Mostra le ultime righe
 print("-" * 30)
 
-output_df.to_csv('data/dataset_xgboost_ready.csv', index=False)
+output_df.to_csv('data/dataset_xgboost_ready_3.csv', index=False)
 print("📁 File salvato come: data/dataset_xgboost_ready.csv")

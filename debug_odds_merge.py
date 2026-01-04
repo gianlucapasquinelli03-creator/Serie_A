@@ -7,7 +7,7 @@ print("--- DEBUG E RIPARAZIONE QUOTE ---")
 
 # 1. CARICAMENTO
 try:
-    df = pd.read_csv('data/dataset_ultimate.csv') # Il tuo dataset senza quote
+    df = pd.read_csv('data/dataset_ultimate_3.csv') # Il tuo dataset senza quote
     odds = pd.read_csv('data/odds_history.csv')   # Il file delle quote
     print(f"✅ File caricati.\nDataset: {len(df)} righe\nOdds: {len(odds)} righe")
 except FileNotFoundError:
@@ -125,7 +125,7 @@ print(f"Righe SENZA Quote: {missing}")
 
 if missing < len(df_final):
     print("✅ SUCCESSO! Le quote sono state inserite.")
-    df_final.to_csv('data/dataset_con_quote_FIXED.csv', index=False)
+    df_final.to_csv('data/dataset_con_quote_FIXED_3.csv', index=False)
     print("📁 Salvato in: 'data/dataset_con_quote_FIXED.csv'")
 else:
     print("❌ ANCORA TUTTO VUOTO. Il problema è nei nomi delle squadre o le date non coincidono per niente.")

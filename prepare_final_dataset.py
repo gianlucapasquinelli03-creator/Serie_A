@@ -5,7 +5,7 @@ print("--- PULIZIA E PREPARAZIONE FINALE (1X2) ---")
 # 1. CARICA IL DATASET CON QUOTE (quello FIXED)
 try:
     # Usa il file generato dallo script di debug/fix
-    df = pd.read_csv('data/dataset_con_quote_FIXED.csv')
+    df = pd.read_csv('data/dataset_con_quote_FIXED_3.csv')
     print(f"1. Righe Totali Iniziali: {len(df)}")
 except FileNotFoundError:
     print("❌ Errore: Manca 'data/dataset_con_quote_FIXED.csv'")
@@ -80,5 +80,5 @@ print("-" * 30)
 print(df_final.head())
 print("-" * 30)
 
-df_final.to_csv('data/dataset_train_final.csv', index=False)
+df_final.to_csv('data/dataset_train_final_3.csv', index=False)
 print("🚀 TUTTO PRONTO! File salvato: 'data/dataset_train_final.csv'")
